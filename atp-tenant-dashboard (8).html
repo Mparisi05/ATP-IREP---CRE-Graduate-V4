@@ -563,8 +563,8 @@
         <button class="sub-btn" data-sub="Central Perimeter" onclick="toggleSub(this)">
           Central Perimeter<span class="sub-tag">Class A</span><span class="sub-cities">Lower Roswell · Sandy Springs · Dunwoody</span>
         </button>
-        <button class="sub-btn" data-sub="North Fulton" onclick="toggleSub(this)">
-          North Fulton<span class="sub-tag">Office + Flex</span><span class="sub-cities">Alpharetta · Johns Creek · Milton · Upper Roswell · Cumming · S. Forsyth</span>
+        <button class="sub-btn" data-sub="North Fulton & South Forsyth" onclick="toggleSub(this)">
+          North Fulton & South Forsyth<span class="sub-tag">Office + Flex</span><span class="sub-cities">Alpharetta · Johns Creek · Milton · Upper Roswell · Cumming · S. Forsyth</span>
         </button>
         <button class="sub-btn" data-sub="Peachtree Corners" onclick="toggleSub(this)">
           Peachtree Corners<span class="sub-tag">Office + Flex</span>
@@ -639,8 +639,8 @@
   <div class="cta-panel" id="ctaPanel">
     <div class="cta-inner">
       <div class="cta-eyebrow">Ready to see what's actually out there?</div>
-      <div class="cta-title">Matt can turn this into real options.</div>
-      <div class="cta-body">Matt Parisi at IREP works with high-growth companies across Atlanta — he's helped teams scale from seed round to nine-figure valuations. Share what you've built here and he'll put together a complimentary market survey of spaces that actually fit.</div>
+      <div class="cta-title">Turn this into real options.</div>
+      <div class="cta-body">Matt Parisi at IREP works with high-growth companies across Atlanta — he's helped teams scale from seed round to nine-figure valuations. Share what you've built here and he'll put together a complimentary market survey of spaces available today.</div>
 
       <div class="cta-form-grid">
         <input type="text" id="ctaName" class="cta-input" placeholder="Your name"/>
@@ -685,11 +685,11 @@ const MARKET_DATA = [
   { submarket: 'Peachtree Corners', class: 'B', type: 'office', rate: 24.15 },
   { submarket: 'Peachtree Corners', class: 'A', type: 'flex',   rate: 19.30 },
   { submarket: 'Peachtree Corners', class: 'B', type: 'flex',   rate: 16.71 },
-  { submarket: 'North Fulton', class: 'A+', type: 'office', rate: 53.81 },
-  { submarket: 'North Fulton', class: 'A',  type: 'office', rate: 30.45 },
-  { submarket: 'North Fulton', class: 'B',  type: 'office', rate: 25.00 },
-  { submarket: 'North Fulton', class: 'A',  type: 'flex',   rate: 23.91 },
-  { submarket: 'North Fulton', class: 'B',  type: 'flex',   rate: 20.34 },
+  { submarket: 'North Fulton & South Forsyth', class: 'A+', type: 'office', rate: 53.81 },
+  { submarket: 'North Fulton & South Forsyth', class: 'A',  type: 'office', rate: 30.45 },
+  { submarket: 'North Fulton & South Forsyth', class: 'B',  type: 'office', rate: 25.00 },
+  { submarket: 'North Fulton & South Forsyth', class: 'A',  type: 'flex',   rate: 23.91 },
+  { submarket: 'North Fulton & South Forsyth', class: 'B',  type: 'flex',   rate: 20.34 },
   { submarket: 'Duluth / Suwanee / Buford', class: 'A', type: 'office', rate: 28.43 },
   { submarket: 'Duluth / Suwanee / Buford', class: 'B', type: 'office', rate: 23.81 },
   { submarket: 'Duluth / Suwanee / Buford', class: 'A', type: 'flex',   rate: 22.59 },
@@ -705,7 +705,7 @@ let selectedSubs = [];
 
 // ── TYPE SELECT ───────────────────────────────────────
 // Submarkets that have flex product
-const FLEX_SUBS = new Set(['Peachtree Corners', 'North Fulton', 'Duluth / Suwanee / Buford']);
+const FLEX_SUBS = new Set(['Peachtree Corners', 'North Fulton & South Forsyth', 'Duluth / Suwanee / Buford']);
 
 function setType(t) {
   selectedType = t;
@@ -903,7 +903,7 @@ function doSend(e) {
   const company = document.getElementById('ctaCompany').value.trim();
   const typeLabel = selectedType === 'office' ? 'Traditional Office' : 'Flex / Office-Warehouse';
   const subj = `Space Inquiry${company ? ' – ' + company : ''} | ${sfMin.toLocaleString()}–${sfMax.toLocaleString()} SF | ${typeLabel}`;
-  window.location.href = `mailto:matt@irep.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(buildEmailBody(true))}`;
+  window.location.href = `mailto:mparisi@industry-rep.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(buildEmailBody(true))}`;
 }
 
 function doSendAnon() {
@@ -911,7 +911,7 @@ function doSendAnon() {
   const sfMax = +document.getElementById('sfMax').value;
   const typeLabel = selectedType === 'office' ? 'Traditional Office' : 'Flex / Office-Warehouse';
   const subj = `Anonymous Space Inquiry | ${sfMin.toLocaleString()}–${sfMax.toLocaleString()} SF | ${typeLabel}`;
-  window.location.href = `mailto:matt@irep.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(buildEmailBody(false))}`;
+  window.location.href = `mailto:mparisi@industry-rep.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(buildEmailBody(false))}`;
 }
 </script>
 </body>
